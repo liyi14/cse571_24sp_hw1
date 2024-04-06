@@ -61,7 +61,7 @@ class ParticleFilter:
                 x: [x, y, theta]
                 marker_id: int
             env.likelihood(innovation, beta)
-                innovation: x - mean, column vector
+                innovation: difference between expected and observed bearing angle
                 beta: noise parameters for landmark observation model            
         """
         particles = self.move_particles(env, u)
