@@ -5,6 +5,7 @@
 import numpy as np
 
 from utils import minimized_angle
+from soccer_field import Field
 
 
 class ParticleFilter:
@@ -24,7 +25,7 @@ class ParticleFilter:
                 self._init_mean.ravel(), self._init_cov)
         self.weights = np.ones(self.num_particles) / self.num_particles
 
-    def move_particles(self, env, u):
+    def move_particles(self, env: Field, u):
         """Update particles after taking an action
         param:
             env: environment object
@@ -46,7 +47,7 @@ class ParticleFilter:
         # YOUR IMPLEMENTATION END HERE
         return new_particles
 
-    def update(self, env, u, z, marker_id):
+    def update(self, env: Field, u, z, marker_id):
         """Update the state estimate after taking an action and receiving 
         a landmark observation.
         param:

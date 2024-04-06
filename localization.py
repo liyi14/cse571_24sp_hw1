@@ -15,7 +15,7 @@ from pf import ParticleFilter
 
 
 def localize(
-    env,
+    env: Field,
     policy,
     filt,
     x0,

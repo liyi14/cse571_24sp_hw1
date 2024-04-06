@@ -147,7 +147,7 @@ class Field:
     def likelihood(self, innovation, beta):
         """Compute the likelihood of innovation, given covariance matrix beta.
 
-        innovation: x - mean, column vector
+        innovation: difference between expected and observed bearing angle
         beta: noise parameters for landmark observation model
         """
         norm = np.sqrt(np.linalg.det(2 * np.pi * beta))
