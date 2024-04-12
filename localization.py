@@ -88,7 +88,7 @@ def localize(
         position_errors[i] = np.linalg.norm(errors[i, :2])
 
         cond_number = np.linalg.cond(cov)
-        if cond_number > 1e12:
+        if cond_number > 1e5:
             print('Badly conditioned cov (setting to identity):', cond_number)
             print(cov)
             cov = np.eye(3)
